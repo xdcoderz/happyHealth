@@ -1,5 +1,10 @@
 # How to Build the Frontend Through Phase 3
 
+> **Implementation note (2026-10-09):** This file preserves the original learning
+> plan. The responsive React doctor dashboard and its loading, failure, timeline,
+> and live-prediction states are now implemented. Use the root README and
+> `docs/PHASE_STATUS.md` as the current source of truth.
+
 Owner: M1. Objective: show a synthetic patient, historical glucose chart, and clearly labelled mock prediction from Spring Boot.
 Roadmap: [Project phases](../docs/PROJECT_PHASES.md).
 

@@ -1,5 +1,10 @@
 # How to Build the Backend Through Phase 3
 
+> **Implementation note (2026-10-09):** This file preserves the original learning
+> plan. The Spring Boot digital twin, MQTT ingestion, H2 state, FastAPI integration,
+> and automated tests are now implemented. Use the root README, API contract, and
+> `docs/PHASE_STATUS.md` as the current source of truth.
+
 Owner: M2. Objective: serve one synthetic patient and connect the dashboard to the Python mock prediction service.
 Roadmap: [Project phases](../docs/PROJECT_PHASES.md).
 

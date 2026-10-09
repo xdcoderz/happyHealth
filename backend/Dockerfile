@@ -1,21 +1,12 @@
-# ── Stage 1: build ──────────────────────────────────────────────
-FROM eclipse-temurin:21-jdk AS builder
-WORKDIR /app
-
-# Copy pom first — Docker caches this layer, so deps only re-download
-# when pom.xml actually changes (not every code change)
+FROM maven:3.9.11-eclipse-temurin-21 AS build
+WORKDIR /build
 COPY pom.xml .
-COPY .mvn .mvn
-COPY mvnw .
-RUN chmod +x mvnw
-RUN ./mvnw dependency:go-offline -q
-
+RUN mvn -q -DskipTests dependency:go-offline
 COPY src src
-RUN ./mvnw package -DskipTests -q
+RUN mvn -q -DskipTests package
 
-# ── Stage 2: runtime ─────────────────────────────────────────────
 FROM eclipse-temurin:21-jre
 WORKDIR /app
-COPY --from=builder /app/target/happyhealth-backend-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /build/target/virtual-patient-backend-1.0.0.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]

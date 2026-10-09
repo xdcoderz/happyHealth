@@ -1,9 +1,14 @@
 # Backend TODO: Phases 1-3
 
+> **Historical planning checklist:** the working backend now goes beyond these
+> Phase 1–3 mock requirements. See the root README and `docs/PHASE_STATUS.md` for
+> verified implementation status. Unchecked boxes below are not the current
+> challenge-readiness checklist.
+
 Owner: M2, Java/Spring Boot + IoT + digital twin developer.
 Collaborators: M1 for ML contracts and frontend integration; M3 for healthcare field review.
 Roadmap: [Project phases](../docs/PROJECT_PHASES.md).
-Status: planning checklist; all implementation tasks are pending.
+Status: retained for learning and traceability; implementation is tracked elsewhere.
 
 Practical companion: [HOW_TO.md](HOW_TO.md) explains the steps, tools, sources, review handoffs, and when each phase can be marked done.
 

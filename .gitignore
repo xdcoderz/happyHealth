@@ -1,12 +1,4 @@
-# =============================================================
-# happyHealth monorepo — root .gitignore
-# Covers: backend (Java/Spring Boot), frontend (Node/Vite/React),
-#         ml-service (Python/FastAPI), and common tooling
-# =============================================================
-
-# ---------------------------------------------------------------
-# Environment & secrets — NEVER commit these
-# ---------------------------------------------------------------
+# Environment and secrets
 .env
 .env.*
 !.env.example
@@ -15,46 +7,64 @@
 *.p12
 *.jks
 
-# ---------------------------------------------------------------
-# Backend — Java / Maven / Spring Boot
-# ---------------------------------------------------------------
-backend/target/
-backend/*.h2.db
-backend/*.trace.db
-backend/HELP.md
-
-# Maven wrapper jar (downloaded on demand)
-backend/.mvn/wrapper/maven-wrapper.jar
-
-# ---------------------------------------------------------------
-# Frontend — Node / npm / Vite / React
-# ---------------------------------------------------------------
-frontend/node_modules/
-frontend/dist/
-frontend/.vite/
-frontend/.cache/
-frontend/coverage/
-
-# ---------------------------------------------------------------
-# ML Service — Python / pip / virtual envs
-# ---------------------------------------------------------------
-ml-service/__pycache__/
-ml-service/**/__pycache__/
-ml-service/*.pyc
-ml-service/*.pyo
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
 ml-service/.venv/
 ml-service/venv/
 ml-service/env/
-ml-service/.pytest_cache/
 ml-service/htmlcov/
 ml-service/.coverage
 ml-service/dist/
 ml-service/build/
 ml-service/*.egg-info/
 
-# ---------------------------------------------------------------
-# OS generated files
-# ---------------------------------------------------------------
+# Java / Maven
+target/
+backend/target/
+backend/*.h2.db
+backend/*.trace.db
+backend/HELP.md
+backend/.mvn/wrapper/maven-wrapper.jar
+
+# Node / Vite
+node_modules/
+dist/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.cache/
+frontend/coverage/
+*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts
+
+# Local build and rendering workspaces
+.codex-build/
+tmp/
+.chart-data-*/
+
+# IDEs and operating-system files
+.idea/
+.vscode/
+*.iws
+*.iml
+*.ipr
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
 .DS_Store
 .DS_Store?
 ._*
@@ -64,37 +74,7 @@ ehthumbs.db
 Thumbs.db
 desktop.ini
 
-# ---------------------------------------------------------------
-# IDE / Editor folders
-# ---------------------------------------------------------------
-# IntelliJ IDEA
-.idea/
-*.iws
-*.iml
-*.ipr
-
-# VS Code
-.vscode/
-
-# Eclipse / STS
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings/
-.springBeans
-.sts4-cache
-
-# NetBeans
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-# ---------------------------------------------------------------
-# Logs & runtime artefacts
-# ---------------------------------------------------------------
+# Logs and temporary editor files
 *.log
 logs/
 *.tmp

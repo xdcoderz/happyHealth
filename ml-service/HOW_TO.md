@@ -1,5 +1,10 @@
 # How to Build the Python Service Through Phase 3
 
+> **Implementation note (2026-10-09):** This file preserves the original learning
+> plan. The deterministic mock has been replaced by the trained, versioned
+> 43-feature Logistic Regression artifact served through FastAPI. Use the root
+> README, model card, and `docs/PHASE_STATUS.md` as the current source of truth.
+
 Owner: M1, including coordination. Objective: accept a backend request and return an explicit deterministic mock prediction.
 M2 owns the calling Java client; M3 reviews clinical meaning.
 Roadmap: [Project phases](../docs/PROJECT_PHASES.md).

@@ -17,7 +17,7 @@ GlucoTwin India: A Personalized Digital Twin for Predicting Type 2 Diabetes Gluc
 
 ### One-Line Pitch
 
-GlucoTwin India creates a virtual metabolic profile for a patient and predicts glucose spikes up to 2 hours in advance by fusing synthetic EHR data with simulated CGM and wearable signals.
+GlucoTwin India creates a virtual metabolic profile for a patient and predicts glucose spikes up to 2 hours in advance by combining open research data for model development with synthetic patient data for a safe application demonstration.
 
 ### Healthcare Use Case
 
@@ -71,9 +71,15 @@ Patient or health coach viewing simplified preventive guidance.
 
 ## 5. Data Strategy
 
+### Two Data Lanes
+
+Use open, de-identified research data to develop and evaluate the model. Use synthetic patients for the public application demonstration so no real participant record is exposed through the interface.
+
+The first research cohort is ShanghaiT2DM: 100 base patients across 109 recordings with 15-minute CGM, timed dietary and medication events, and clinical summaries. Keep downloaded and generated patient-level files local; commit only preparation code, documentation, and non-patient inventories.
+
 ### Static EHR-Like Data
 
-Use synthetic EHR generation instead of real patient data.
+Use ShanghaiT2DM clinical fields for research experiments and synthetic EHR generation for the demonstration patient.
 
 Candidate fields:
 
@@ -108,7 +114,7 @@ Candidate streams:
 - Meal timing and carbohydrate load
 - Stress proxy score
 
-For the first version, generate synthetic CGM and wearable data with realistic daily patterns, meal spikes, sleep/activity effects, and per-patient variability.
+For the first model version, prepare ShanghaiT2DM with a reproducible patient-level split. Synthetic CGM and wearable streams remain useful for application demos and scenario testing, but they do not replace evaluation on real open research measurements.
 
 ## 6. Digital Twin Concept
 

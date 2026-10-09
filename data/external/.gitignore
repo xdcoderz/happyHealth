@@ -1,0 +1,10 @@
+# Downloaded third-party datasets are kept local and must not be committed.
+archives/
+datasets/
+references/
+tools/
+
+# Keep the provenance and integrity records versionable.
+!.gitignore
+!README.md
+!MANIFEST.csv

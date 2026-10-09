@@ -1,10 +1,14 @@
 # Python ML Service TODO: Phases 1-3
 
+> **Historical planning checklist:** the mock service has been replaced by the
+> trained, versioned 43-feature model API. See the model card, root README, and
+> `docs/PHASE_STATUS.md` for the current status.
+
 Owner: M1, fullstack developer and ML service coordinator.
 Collaborators: M2 for Spring Boot client integration; M3 for clinical target/field review.
 M2 consumes this service but does not own its coordination.
 Roadmap: [Project phases](../docs/PROJECT_PHASES.md).
-Status: planning checklist; all implementation tasks are pending.
+Status: retained for learning and traceability; implementation is tracked elsewhere.
 
 Practical companion: [HOW_TO.md](HOW_TO.md) explains the steps, tools, sources, review handoffs, and when each phase can be marked done.
 

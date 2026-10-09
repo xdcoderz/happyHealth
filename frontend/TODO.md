@@ -1,10 +1,14 @@
 # Frontend TODO: Phases 1-3
 
+> **Historical planning checklist:** the working responsive dashboard is now
+> implemented and tested. See the root README and `docs/PHASE_STATUS.md` for the
+> current status.
+
 Owner: M1, fullstack developer.
 Collaborators: M2 for Spring Boot APIs; M3 for clinical labels and demo review.
 M1 also owns Python ML service coordination; see [ML TODO](../ml-service/TODO.md).
 Roadmap: [Project phases](../docs/PROJECT_PHASES.md).
-Status: planning checklist; all implementation tasks are pending.
+Status: retained for learning and traceability; implementation is tracked elsewhere.
 
 Practical companion: [HOW_TO.md](HOW_TO.md) explains the steps, tools, sources, review handoffs, and when each phase can be marked done.
 

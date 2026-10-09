@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0",
+  "provenance": {"synthetic": true, "purpose": "Public prototype demonstration", "containsRealPatientData": false},
+  "patient": {
+    "patientId": "DEMO-001", "displayName": "Synthetic Patient 001", "sex": "female",
+    "ageYears": 52, "bmiKgM2": 27.4, "diabetesDurationYears": 7.0,
+    "hba1cPercent": 7.6, "fastingPlasmaGlucoseMgDl": 136.0,
+    "diagnoses": ["Type 2 diabetes mellitus", "Hypertension"],
+    "medications": ["Metformin"]
+  },
+  "currentMeal": {
+    "description": "Brown rice 120 g, mixed vegetables 150 g, grilled chicken 60 g",
+    "minutesSincePreviousMeal": 240.0, "csiiBolusInsulinIu": 0.0,
+    "csiiBasalInsulinIuPerHour": 0.0, "hasRecordedCsiiBolus": false,
+    "hasRecordedCsiiBasalSetting": false, "hasRecordedSubcutaneousInsulin": false,
+    "hasRecordedNonInsulinMedication": true, "hasRecordedIntravenousInsulin": false
+  },
+  "cgmHistory": [
+    {"minutesBefore": 120, "glucoseMgDl": 112.0}, {"minutesBefore": 105, "glucoseMgDl": 114.0},
+    {"minutesBefore": 90, "glucoseMgDl": 116.0}, {"minutesBefore": 75, "glucoseMgDl": 118.0},
+    {"minutesBefore": 60, "glucoseMgDl": 121.0}, {"minutesBefore": 45, "glucoseMgDl": 126.0},
+    {"minutesBefore": 30, "glucoseMgDl": 131.0}, {"minutesBefore": 15, "glucoseMgDl": 136.0},
+    {"minutesBefore": 0, "glucoseMgDl": 142.0}
+  ]
+}

@@ -1,8 +1,12 @@
 # Documentation TODO: Phases 1-3
 
+> **Historical planning checklist:** the contracts, scope, data dictionary,
+> architecture, acceptance criteria, and submission package now exist. Use
+> `PHASE_STATUS.md` and `submission/SUBMISSION_CHECKLIST.md` for current gaps.
+
 Owners: M3 for clinical content; M1 for frontend/ML contracts and demo documentation; M2 for backend/IoT architecture and run configuration.
 Roadmap: [Project phases](PROJECT_PHASES.md).
-Status: the roadmap and folder TODOs exist; the deliverables below are planned, not completed.
+Status: retained for learning and traceability; current deliverables are tracked elsewhere.
 
 Practical companion: [HOW_TO.md](HOW_TO.md) explains the steps, tools, sources, review handoffs, and when each phase can be marked done.
 

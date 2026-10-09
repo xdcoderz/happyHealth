@@ -1,38 +1,53 @@
-
 services:
+  mqtt:
+    image: eclipse-mosquitto:2.0
+    volumes:
+      - ./infrastructure/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+    ports:
+      - "1883:1883"
+    restart: unless-stopped
+
+  ml-service:
+    build:
+      context: .
+      dockerfile: ml-service/Dockerfile
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
   backend:
     build:
       context: ./backend
+    environment:
+      HAPPYHEALTH_ML_BASE_URL: http://ml-service:8000
+      HAPPYHEALTH_MQTT_ENABLED: "true"
+      HAPPYHEALTH_MQTT_BROKER_URL: tcp://mqtt:1883
+    depends_on:
+      - mqtt
+      - ml-service
     ports:
       - "8080:8080"
+    restart: unless-stopped
+
+  simulator:
+    build:
+      context: ./simulator
     environment:
-      - ML_SERVICE_URL=${ML_SERVICE_URL:-http://localhost:8000}
-      - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS:-http://localhost:5173}
-    # depends_on:              # uncomment when ml-service Dockerfile is ready
-    #   - ml-service
-    networks:
-      - happyhealth-net
+      MQTT_HOST: mqtt
+      MQTT_PORT: "1883"
+      PATIENT_ID: DEMO-001
+      PUBLISH_INTERVAL_SECONDS: "5"
+      STARTUP_DELAY_SECONDS: "20"
+    depends_on:
+      - mqtt
+      - backend
+    restart: unless-stopped
 
-  # ml-service:               # uncomment when ml-service/Dockerfile is ready
-  #   build:
-  #     context: ./ml-service
-  #   ports:
-  #     - "8000:8000"
-  #   networks:
-  #     - happyhealth-net
-
-  # frontend:                 # uncomment when frontend/Dockerfile is ready
-  #   build:
-  #     context: ./frontend
-  #   ports:
-  #     - "5173:5173"
-  #   environment:
-  #     - VITE_API_BASE_URL=http://localhost:8080
-  #   depends_on:
-  #     - backend
-  #   networks:
-  #     - happyhealth-net
-
-networks:
-  happyhealth-net:
-    driver: bridge
+  frontend:
+    build:
+      context: ./frontend
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+    restart: unless-stopped

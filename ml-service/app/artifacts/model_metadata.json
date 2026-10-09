@@ -1,0 +1,21 @@
+{
+  "modelVersion": "shanghai-logistic-v1",
+  "modelType": "LogisticRegression",
+  "schemaVersion": "1.0",
+  "featureCount": 43,
+  "target": "glucose rise of at least 40 mg/dL within 2 hours after a meal",
+  "trainingData": "ShanghaiT2DM open research dataset; aggregate model only",
+  "validation": {
+    "splitMethod": "patient-level train/validation/test split",
+    "validationRocAuc": 0.701,
+    "validationF1": 0.779,
+    "testRocAuc": 0.757,
+    "testF1": 0.742
+  },
+  "limitations": [
+    "Research prototype only",
+    "Not clinically validated",
+    "Not intended for diagnosis or treatment",
+    "Public demo uses a synthetic patient"
+  ]
+}
